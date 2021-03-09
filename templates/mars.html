@@ -1,0 +1,50 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ url_for('static', filename='mstyle.css') }}" type="text/css" media="all">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<script charset="utf-8">
+  function toggleMute() {
+
+  var video=document.getElementById("myVideo");
+
+  video.muted = !video.muted;
+
+}
+</script>
+<style type="text/css" media="screen">
+.sbtn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: white;
+}
+  .sbtn:hover {
+    color: black;
+
+  }
+</style>
+<body>
+    
+<video autoplay playsinline muted loop id="myVideo" >
+    <source  src={{ url_for('static', filename="xmars.mp4") }} type="video/mp4" >
+  Your browser does not support HTML5 video.
+</video>
+
+<header class="viewport-header">
+	<form action = "/mars/explore" method = "post">
+  <button>
+  <h1>
+    Explore
+    <span>Mars</span>
+  </h1>
+  </button>
+	</form>
+  <button class="sbtn" onclick="toggleMute()" ><i class="fa fa-volume-up fa-5x"></i></button>
+</header>
+<!-- <iframe src='https://solarsystem.nasa.gov/gltf_embed/2372' width='100%' height='450px' frameborder='0' /> -->
+
+
+</body>
+</html>

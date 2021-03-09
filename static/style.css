@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'nasa';
+  src: url(nasa.ttf);
+}
+html {
+  background: url(mars.jpg) no-repeat center center fixed; 
+  background-size: cover;
+}
+body {
+  display: flex;
+  justify-content: center;
+  font-family: nasa;
+  align-items: center;
+}
+.wel {
+  display: flex;
+  flex-direction: column;
+}
+.but {
+  font-family: nasa;
+  font-size: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 20% 4% 0% 0%;
+  padding: 30px 30px  30px  30px ; 
+
+  border: none;
+  transition-duration: 0.6s;
+  background-color: transparent;
+}
+.but:hover {
+  color: white;
+  background-color: transparent;
+}
+.mbtn {
+  color:white;
+}
+
+.title {
+  color: white;
+}
+form {
+  padding-left: 13%;
+
+}

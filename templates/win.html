@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css" >
+<style type="text/css" media="screen">
+html {
+
+  background: url("{{ url_for('static', filename='earth.jpg') }}") no-repeat center center fixed; 
+  background-size: cover;
+
+}
+.title {
+
+}
+</style>
+{% endblock %}
+
+
+{% block body %}
+  
+<form action="/" method="GET">
+  <button class="but">
+<h1 class="title">You Won!! May you return to mother earth safe</h1>
+
+</button>
+</form>
+{% endblock %}

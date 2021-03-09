@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
+<link rel="stylesheet" href="https://unpkg.com/ol-popup@4.0.0/src/ol-popup.css" />
+    <style>
+      .map {
+        height: 800px;
+        width: 100%;
+      }
+      body {
+        margin: 0%;
+
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+    <title>Choose your landing Spot</title>
+  </head>
+  <body>
+    <div id="map" class="map"></div>
+<script src="https://unpkg.com/ol-popup@4.0.0"></script>
+    <script type="text/javascript">
+var map = new ol.Map({
+  target: 'map',
+	layers: [
+	          new ol.layer.Tile({
+	            source: new ol.source.XYZ({
+	              url: 'https://cartocdn-gusc.global.ssl.fastly.net/opmbuilder/api/v1/map/named/opm-mars-basemap-v0-2/all/{z}/{x}/{y}.png'
+	            })
+	          })
+	        ],
+  view: new ol.View({
+    center: [0,0],
+    zoom: 4
+  })
+});
+
+var popup = new Popup();
+map.addOverlay(popup);
+
+map.on('singleclick', function(evt) {
+    var prettyCoord = ol.coordinate.toStringHDMS(ol.proj.transform(evt.coordinate, 'EPSG:3857', 'EPSG:4326'), 2);
+        popup.show(evt.coordinate,'<form action = "/mars/land" method = "post"><button style="borders:none;background-color:transparent;">LAND HERE! </button></form><p>Success rate: 50%</p></div>'+ '<div><h2>Coordinates</h2><p>' + prettyCoord + '</p> ');
+});
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="{{ url_for('static', filename='mstyle.css') }}" type="text/css" media="all">
+		<title>Success</title>
+	</head>
+	<style type="text/css" media="screen">
+img { 
+  min-width: 100%;
+  min-height: 100%;}	
+	.tag {
+margin-top: 20%;
+	}
+	</style>
+	<body>
+		<div class="container">
+			<form action="/mars/build" method="GET">
+<button><h1 class="tag" >LANDED SUCCESSFULLY!</h1>
+</button>
+			</form>
+		</div>
+<video autoplay playsinline muted loop id="myVideo" onclick="this.play()">
+    <source  src={{ url_for('static', filename="landing.mp4") }} type="video/mp4" >
+  Your browser does not support HTML5 video.
+</video>
+	</body>
+</html>
